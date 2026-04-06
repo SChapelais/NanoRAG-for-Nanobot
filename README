@@ -1,0 +1,22 @@
+# Nano-RAG for Nanobot 🐈
+
+A brutally lightweight, zero-dependency Retrieval-Augmented Generation (RAG) system, built for extreme constraint environments. 
+
+Inspired by the HKUDS `nanobot` framework and the recent release of `LightRAG v1.4`.
+
+## The Problem
+Enterprise RAG systems (like LightRAG's MiniRAG) are powerful but rely on heavy libraries (`scipy`, `networkx`, Graph DBs). If you are deploying an AI agent on a $10/mo Railway node with 512MB RAM, these dependencies will crash your server (OOM).
+
+## The Fix: Nano-RAG
+I built this custom RAG layer to run my personal agent (AUM NEXUS) entirely from a Redmi smartphone. 
+
+- **Pure Python:** ~180 lines of code. Zero external vector databases (No Chroma, No Neo4j).
+- **Mathematical core:** Uses standard `math.sqrt` and `sum` for Cosine Similarity.
+- **Embeddings:** Uses OpenRouter's `text-embedding-3-small` API (pennies per month).
+- **Storage:** Simple local JSON index. 
+
+## How it works
+It parses local `.md` and `.json` memory files, chunks them, generates vectors via OpenRouter, and computes similarities locally in Python before injecting the top matches into the LLM prompt.
+
+## Credit
+Built by Sam Chapelais as a custom layer on top of the routing philosophy of [HKUDS Nanobot](https://github.com/HKUDS/nanobot). Intelligence is about density, not infrastructure bloat.
