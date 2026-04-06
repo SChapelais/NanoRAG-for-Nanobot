@@ -10,7 +10,7 @@ Enterprise RAG systems (like LightRAG's MiniRAG) are powerful but rely on heavy 
 ## The Fix: Nano-RAG
 I built this custom RAG layer to run my personal agent (AUM NEXUS) entirely from a Redmi smartphone. 
 
-- **Pure Python:** ~180 lines of code. Zero external vector databases (No Chroma, No Neo4j).
+- **Pure Python:** ~190 lines of code. Zero external vector databases (No Chroma, No Neo4j).
 - **Mathematical core:** Uses standard `math.sqrt` and `sum` for Cosine Similarity.
 - **Embeddings:** Uses OpenRouter's `text-embedding-3-small` API (pennies per month).
 - **Storage:** Simple local JSON index. 
